@@ -1,0 +1,26 @@
+﻿@model WebApp3.Models.AcceptModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AcceptReview</title>
+</head>
+<body>
+    <div> 
+    </div>
+    <h1>The result is </h1>
+
+    @if (@Model.result != null) {
+    <i>Great! Sounds like you loved @Model.result[1].FirstName</i>
+    } else {
+   <b> Thanks, we've recorded your review  </b>
+    }
+
+</body>
+</html>

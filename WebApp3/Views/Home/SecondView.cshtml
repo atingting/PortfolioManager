@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "SecondView";
+    string userAgent = Request.UserAgent;
+}
+
+<h2>SecondView</h2>
+
+<p>
+    User agent:  <i> @userAgent </i>
+</p>
+
+<p>
+    Physical path: <i> @Request.Url.GetLeftPart(UriPartial.Path) </i>
+</p>

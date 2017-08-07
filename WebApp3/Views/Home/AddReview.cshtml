@@ -1,0 +1,82 @@
+﻿@model WebApp3.Models.ChangeModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddReview</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />  
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+
+        function sendRequest() {
+         
+            $.ajax({
+                    type: "post",
+                    url: "http://localhost:38877/api/deleteStocks",
+                    contentType: 'application/json',
+                    data: JSON.stringify({ NAME: "Jim", DES: "备注" }),
+                    success: function (data, status) {
+                        alert("");
+                    }
+                    
+                }
+            );
+        }
+    </script>
+</head>
+<body>
+    <div>
+        @*@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "newsinsertform" }))
+        {
+            @Html.ValidationSummary()
+
+            <p>
+                @Html.LabelFor(m => m.Name, "Your firstname:")
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Resort, "your lastname:")
+                @Html.TextBoxFor(m => m.Resort)
+                @Html.ValidationMessageFor(m => m.Resort)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Comments, "amountOwn:")
+                @Html.TextBoxFor(m => m.Comments)
+                @Html.ValidationMessageFor(m => m.Comments)
+            </p>
+
+            <p>
+                @Html.LabelFor(m => m.Rating, "Your rating:")
+
+                @Html.DropDownListFor(
+              m => m.Rating,
+              new[] {
+                new SelectListItem { Text = "1975-06-04", Value = "1975-06-04" },
+                new SelectListItem { Text = "1985-06-04",  Value = "1985-06-04" },
+                new SelectListItem { Text = "1995-06-04",   Value = "1995-06-04" },
+                new SelectListItem { Text = "2005-06-04",    Value = "2005-06-04" },
+                new SelectListItem { Text = "2015-06-04",     Value = "2015-06-04" },
+              },
+              "Choose a rating")
+            </p>
+
+            <input type="submit" value="Submit!" onclick="sendRequest"/>*@
+
+
+
+        @*}*@
+
+        <button id="btn" onclick="sendRequest()">click</button>
+
+    </div>
+</body>
+</html>
